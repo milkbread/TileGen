@@ -422,7 +422,7 @@ class TilesDialog(Gtk.Dialog):
         
         proof = self.mapnik_map.append_style(name,s)
        #print 'Style appending worked!?: ',proof
-        #ds = mapnik.Shapefile(file='/home/klammer/Software/Quickly/tilegen/data/media/testdaten/mercator_polygon/lines-vgtl-27-01-12.shp')
+        #ds = mapnik.Shapefile(file='/home/klammer/Software/Quickly/TileGen/tilegen/data/media/testdaten/mercator_polygon/lines-vgtl-27-01-12.shp')
         layer = mapnik.Layer('world')
         layer.datasource = self.datasource[1]#ds
         layer.srs = self.layerSRS#self.mapnik_map.srs
@@ -502,7 +502,7 @@ class TilesDialog(Gtk.Dialog):
                 extent, z = new_object.getExtents(tile)
                 infos.append(extent)
                 #infos for the creation of the valid xml-wps file
-                source = self.datasource[2]['file']#"/home/klammer/Software/Quickly/tilegen/data/media/testdaten/mercator_polygon/linesvgtl270112.shp"
+                source = self.datasource[2]['file']#"/home/klammer/Software/Quickly/TileGen/tilegen/data/media/testdaten/mercator_polygon/linesvgtl270112.shp"
                 func_ident = self.chosen_identifier#'ch.unizh.geo.webgen.service.LineSmoothing'
                 infos.append(source)
                 infos.append(func_ident)
@@ -513,7 +513,7 @@ class TilesDialog(Gtk.Dialog):
                 if not os.path.isdir(xml_files_folder):
                     os.mkdir(xml_files_folder)
         
-                #folder = "/home/klammer/Software/Quickly/tilegen/data/media/cache/xmlfiles/"
+                #folder = "/home/klammer/Software/Quickly/TileGen/tilegen/data/media/cache/xmlfiles/"
                 infos.append(server)
                 infos.append(dest_file)
                 infos.append(xml_files_folder)

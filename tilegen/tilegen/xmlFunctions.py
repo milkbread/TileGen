@@ -484,7 +484,7 @@ def makeGML(file):
         counter = counter + 1
                             
 
-    file2 = open('/home/klammer/Software/Quickly/tilegen/data/media/template_ogr_output.gml', 'w')
+    file2 = open('/home/klammer/Software/Quickly/TileGen/tilegen/data/media/template_ogr_output.gml', 'w')
     
     file2.write('<?xml version="1.0" encoding="utf-8" ?>')
     xml.ElementTree(featColl).write(file2)

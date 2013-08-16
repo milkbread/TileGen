@@ -208,7 +208,7 @@ def qickTest():
     r.symbols.append(line_symbolizer)
     s.rules.append(r)
     m.append_style('My New Style',s)
-    ds = mapnik.Shapefile(file = '/home/klammer/Software/Quickly/tilegen/data/media/testdaten/mercator_polygon/lines-vgtl-27-01-12.shp')
+    ds = mapnik.Shapefile(file = '/home/klammer/Software/Quickly/TileGen/tilegen/data/media/testdaten/mercator_polygon/lines-vgtl-27-01-12.shp')
     layer = mapnik.Layer('world')
     layer.datasource = ds
     layer.styles.append('My Style')
@@ -230,8 +230,8 @@ def testMapnik():
     #Help from Dane Springmeyer: https://gist.github.com/3438657
     
     #print mapnik.mapnik_version_string()
-    #mapfile = '/home/klammer/Software/Quickly/tilegen/data/media/testdaten/mercator_polygon/vogtland_style_PC-version.xml'
-    mapfile = '/home/klammer/Software/Quickly/tilegen/data/media/testdaten/mercator_polygon/slippy_vogtland.xml'
+    #mapfile = '/home/klammer/Software/Quickly/TileGen/tilegen/data/media/testdaten/mercator_polygon/vogtland_style_PC-version.xml'
+    mapfile = '/home/klammer/Software/Quickly/TileGen/tilegen/data/media/testdaten/mercator_polygon/slippy_vogtland.xml'
     
     imgx = 256
     imgy = 256
@@ -297,7 +297,7 @@ def testMapnik():
             plug_in = plug_in + plugs.__getitem__(i)
         #print plug_in
 
-    ds = mapnik.Shapefile(file='/home/klammer/Software/Quickly/tilegen/data/media/testdaten/mercator_polygon/lines.shp')
+    ds = mapnik.Shapefile(file='/home/klammer/Software/Quickly/TileGen/tilegen/data/media/testdaten/mercator_polygon/lines.shp')
     #print ds.file()
     #print mapnik.mapnik_version_string()
 
@@ -357,7 +357,7 @@ class RenderThread:
         c0, c1 = self.calcTileCoordinates(tile, z)
         tile_extent = (c0.x,c0.y, c1.x,c1.y)
         #dest_file = "WebGen_WPS_file.xml"
-        #folder = "/home/klammer/Software/Quickly/tilegen/data/media/"
+        #folder = "/home/klammer/Software/Quickly/TileGen/tilegen/data/media/"
         #test = makeWPSfile(tile_extent, folder+dest_file)
         #if test > 0:
         #    sendFile(dest_file, folder)
