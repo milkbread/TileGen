@@ -1,0 +1,31 @@
+<Map background-color="rgb(0,0,0)" srs="+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs">
+
+<Style name="vgtl_lines-waterway" filter-mode="first">
+  <Rule>
+    <Filter>([waterway] != '')</Filter>
+    <LineSymbolizer stroke="#09a0be" stroke-width="2" stroke-linejoin="round"/>
+    
+  </Rule>
+</Style>
+<Style name="preview">
+  <Rule>
+    <LineSymbolizer stroke="rgb(255,0,0)" stroke-width="2" stroke-linejoin="round"/>    
+  </Rule>
+</Style>
+<Layer name="vgtl_lines"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>vgtl_lines-waterway</StyleName>
+    
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">../testdaten/mercator_polygon/lines-vgtl-27-01-12.shp</Parameter>
+    </Datasource>
+  </Layer>
+
+
+
+</Map>
+
+
+
+

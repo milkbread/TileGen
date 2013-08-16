@@ -1,0 +1,44 @@
+<wps:Feature>
+	<wps:AttributeGEOMETRY>
+		<wps:Value srsName="0" wpstype="AttributeTypeGeometryMultiPolygon">
+			<gml:polygonMember xmlns:gml="http://www.opengis.net/gml">
+			<gml:Polygon srsName="0">
+				<gml:outerBoundaryIs>
+					<gml:LinearRing>
+						<gml:coord>
+							<gml:X>16.326528354567045653311652131378650665283203125</gml:X>
+							<gml:Y>-5.8774703914662183024120167829096317291259765625</gml:Y>
+						</gml:coord>
+						<gml:coord>
+							<gml:X>16.57317996589614494951092638075351715087890625</gml:X>
+							<gml:Y>-6.622644545115093706044717691838741302490234375</gml:Y>
+						</gml:coord>
+						...
+						<gml:coord>
+							<gml:X>16.326528354567045653311652131378650665283203125</gml:X>
+							<gml:Y>-5.8774703914662183024120167829096317291259765625</gml:Y>
+						</gml:coord>
+					</gml:LinearRing>
+				</gml:outerBoundaryIs>
+				</gml:Polygon>
+			</gml:polygonMember>
+				<gml:polygonMember xmlns:gml="http://www.opengis.net/gml">
+				<gml:Polygon srsName="0">
+					<gml:outerBoundaryIs>
+						<gml:LinearRing>
+							<gml:coord>
+								<gml:X>12.436688266660922863593441434204578399658203125</gml:X>
+								<gml:Y>-5.68430388755922422205912880599498748779296875</gml:Y>
+							</gml:coord>
+							...
+							<gml:coord>
+								<gml:X>12.436688266660922863593441434204578399658203125</gml:X>
+								<gml:Y>-5.68430388755922422205912880599498748779296875</gml:Y>
+							</gml:coord>
+						</gml:LinearRing>
+					</gml:outerBoundaryIs>
+				</gml:Polygon>
+			</gml:polygonMember>
+		</wps:Value>
+	</wps:AttributeGEOMETRY>
+</wps:Feature>

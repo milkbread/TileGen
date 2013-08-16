@@ -1,0 +1,93 @@
+<Map background-color="rgb(0,0,0)" srs="+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs">
+<Style name="vgtl_polygons-forest" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([landuse] = 'forest')</Filter>
+    <PolygonSymbolizer fill="#5ebd09" />
+  </Rule>
+</Style>
+<Style name="vgtl_polygons-farmland" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([landuse] = 'farmland')</Filter>
+    <PolygonSymbolizer fill="#884111" />
+  </Rule>
+</Style>
+<Style name="vgtl_polygons-meadow" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([landuse] = 'meadow')</Filter>
+    <PolygonSymbolizer fill="#5ebd09" />
+  </Rule>
+</Style>
+<Style name="vgtl_polygons-polygon-smallscale" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([landuse] = 'industrial')</Filter>
+    <PolygonSymbolizer fill="#df2424" fill-opacity="0.3" />
+    <LineSymbolizer stroke="#df2424" stroke-width="2" stroke-dasharray="5, 5" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([landuse] = 'industrial')</Filter>
+    <PolygonSymbolizer fill="#df2424" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([landuse] = 'industrial')</Filter>
+    <PolygonSymbolizer fill="#df2424" fill-opacity="0.3" />
+    <LineSymbolizer stroke="#df2424" stroke-width="2" stroke-dasharray="5, 5" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([landuse] = 'residential')</Filter>
+    <PolygonSymbolizer fill="#df2424" fill-opacity="0.3" />
+    <LineSymbolizer stroke="#df2424" stroke-width="2" stroke-dasharray="5, 5" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([landuse] = 'residential')</Filter>
+    <PolygonSymbolizer fill="#df2424" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([landuse] = 'residential')</Filter>
+    <PolygonSymbolizer fill="#df2424" fill-opacity="0.3" />
+    <LineSymbolizer stroke="#df2424" stroke-width="2" stroke-dasharray="5, 5" />
+  </Rule>
+</Style>
+<Style name="vgtl_polygons" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([natural] = 'water') and ([landuse] = 'commercial')</Filter>
+    <PolygonSymbolizer fill="#09a0be" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([natural] = 'water')</Filter>
+    <PolygonSymbolizer fill="#09a0be" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([landuse] = 'commercial')</Filter>
+    <PolygonSymbolizer fill="#df2424" />
+  </Rule>
+</Style>
+<Layer name="vgtl_polygons"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>vgtl_polygons-forest</StyleName>
+    <StyleName>vgtl_polygons-farmland</StyleName> 
+    <StyleName>vgtl_polygons-meadow</StyleName>
+    <StyleName>vgtl_polygons-polygon-smallscale</StyleName>
+    <StyleName>vgtl_polygons</StyleName>
+    <StyleName>vgtl_polygons-buildings</StyleName>
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">/home/ralf/Software/Quickly/generalcarto/data/media/testdaten/mercator_polygon/reprojected_userfile/polygons.shp</Parameter>
+    </Datasource>
+</Layer>
+</Map>

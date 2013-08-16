@@ -1,0 +1,28 @@
+<Map background-color="rgb(255,255,255)" srs="+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs">
+
+  <Style name="My Style">
+    <Rule>
+      <PolygonSymbolizer fill="rgb(0,0,0)" />
+      <LineSymbolizer stroke="rgb(100%,100%,100%)" stroke-width="0.2" />
+    </Rule>
+  </Style>
+
+  <Layer name="world" srs="+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs">
+    <StyleName>My Style</StyleName>
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">/home/ralf/Software/Quickly/generalcarto/data/media/testdaten/mercator_polygon/reprojected_userfile/polygons.shp</Parameter>
+    </Datasource>
+  </Layer>
+
+  <Layer name="city" srs="+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs">
+    <StyleName>My Style2</StyleName>
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">/home/ralf/Software/Quickly/generalcarto/data/media/testdaten/mercator_polygon/reprojected_userfile/ne_110m_admin_0_countries.shp</Parameter>
+    </Datasource>
+  </Layer>
+
+</Map>
+
+

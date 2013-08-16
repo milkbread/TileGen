@@ -1,0 +1,20 @@
+<Map background-color="rgb(0,0,0)" srs="+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs">
+
+  <Style name="landuse">
+    <Rule>
+      <PolygonSymbolizer fill="rgb(0,122,107)" />
+      <LineSymbolizer stroke="rgb(0%,0%,0%)" stroke-width="0.2" />
+    </Rule>
+  </Style>
+
+  <Layer name="local" srs="+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs">
+    <StyleName>My Style</StyleName>
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">/home/ralf/Software/Quickly/generalcarto/data/media/testdaten/mercator_polygon/reprojected_userfile/polygons.shp</Parameter>
+    </Datasource>
+  </Layer>
+
+</Map>
+
+

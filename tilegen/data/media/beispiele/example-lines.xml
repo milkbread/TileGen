@@ -1,0 +1,519 @@
+<ns:Execute service="WPS" version="1.0.0" xmlns:ns="http://www.opengis.net/wps/1.0.0">
+  <ns1:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">ch.unizh.geo.webgen.service.LineSmoothing</ns1:Identifier>
+  <ns:DataInputs>
+    <ns:Input>
+      <ns1:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">tolerance</ns1:Identifier>
+      <ns1:Title xmlns:ns1="http://www.opengis.net/ows/1.1">tolerance</ns1:Title>
+      <ns1:Abstract xmlns:ns1="http://www.opengis.net/ows/1.1">tolerance</ns1:Abstract>
+      <ns:Data>
+        <ns:LiteralData>10.0</ns:LiteralData>
+      </ns:Data>
+    </ns:Input>
+    <ns:Input>
+      <ns1:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">geom</ns1:Identifier>
+      <ns1:Title xmlns:ns1="http://www.opengis.net/ows/1.1">geom</ns1:Title>
+      <ns1:Abstract xmlns:ns1="http://www.opengis.net/ows/1.1">layer with geometries</ns1:Abstract>
+      <ns:Data>
+        <ns:ComplexData>
+          <wps:FeatureCollection xmlns:wps="www.icaci.org/genmr/wps">
+            <gml:boundedBy xmlns:gml="http://www.opengis.net/gml">
+              <gml:Box>
+                <gml:coord>
+                  <gml:X>1367017.42999999993480741977691650390625</gml:X>
+                  <gml:Y>6558615.429999999701976776123046875</gml:Y>
+                </gml:coord>
+                <gml:coord>
+                  <gml:X>1372283.14612538297660648822784423828125</gml:X>
+                  <gml:Y>6564568.15000000037252902984619140625</gml:Y>
+                </gml:coord>
+              </gml:Box>
+            </gml:boundedBy>
+            <wps:Feature>
+              <wps:AttributeGEOMETRY>
+                <wps:Value srsName="0" wpstype="AttributeTypeGeometryLineString">
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1371226.66999999992549419403076171875</gml:X>
+                    <gml:Y>6561945.700000000186264514923095703125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1371207.40999999991618096828460693359375</gml:X>
+                    <gml:Y>6562086.879999999888241291046142578125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1371182.13999999989755451679229736328125</gml:X>
+                    <gml:Y>6562149.2300000004470348358154296875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370985.80000000004656612873077392578125</gml:X>
+                    <gml:Y>6562496.40000000037252902984619140625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370928.8100000000558793544769287109375</gml:X>
+                    <gml:Y>6562581.389999999664723873138427734375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370903.879999999888241291046142578125</gml:X>
+                    <gml:Y>6562648.4800000004470348358154296875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370802.03000000002793967723846435546875</gml:X>
+                    <gml:Y>6563036.4100000001490116119384765625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370780.1000000000931322574615478515625</gml:X>
+                    <gml:Y>6563142.129999999888241291046142578125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370781.65999999991618096828460693359375</gml:X>
+                    <gml:Y>6563280.870000000111758708953857421875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370905.6499999999068677425384521484375</gml:X>
+                    <gml:Y>6563389.41999999992549419403076171875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370942.2700000000186264514923095703125</gml:X>
+                    <gml:Y>6563541.50999999977648258209228515625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370949.28000000002793967723846435546875</gml:X>
+                    <gml:Y>6563571.719999999739229679107666015625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1371258.25</gml:X>
+                    <gml:Y>6564109.16999999992549419403076171875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1371341.3999999999068677425384521484375</gml:X>
+                    <gml:Y>6564287.969999999739229679107666015625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1371425.879999999888241291046142578125</gml:X>
+                    <gml:Y>6564403.91999999992549419403076171875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1371366.1000000000931322574615478515625</gml:X>
+                    <gml:Y>6564450.09999999962747097015380859375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1371428.3100000000558793544769287109375</gml:X>
+                    <gml:Y>6564568.15000000037252902984619140625</gml:Y>
+                  </gml:coord>
+                </wps:Value>
+              </wps:AttributeGEOMETRY>
+            </wps:Feature>
+            <wps:Feature>
+              <wps:AttributeGEOMETRY>
+                <wps:Value srsName="0" wpstype="AttributeTypeGeometryLineString">
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367091.23999999999068677425384521484375</gml:X>
+                    <gml:Y>6558615.429999999701976776123046875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367069.9799999999813735485076904296875</gml:X>
+                    <gml:Y>6558691.070000000298023223876953125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367052.16999999992549419403076171875</gml:X>
+                    <gml:Y>6558756.030000000260770320892333984375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367042.69999999995343387126922607421875</gml:X>
+                    <gml:Y>6558814.99000000022351741790771484375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367048.05000000004656612873077392578125</gml:X>
+                    <gml:Y>6558913.4800000004470348358154296875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367046.15999999991618096828460693359375</gml:X>
+                    <gml:Y>6558980.34999999962747097015380859375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367023.11000000010244548320770263671875</gml:X>
+                    <gml:Y>6559113.5899999998509883880615234375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367017.42999999993480741977691650390625</gml:X>
+                    <gml:Y>6559176.59999999962747097015380859375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367035.129999999888241291046142578125</gml:X>
+                    <gml:Y>6559259.639999999664723873138427734375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367072.41999999992549419403076171875</gml:X>
+                    <gml:Y>6559182.040000000037252902984619140625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367089.88999999989755451679229736328125</gml:X>
+                    <gml:Y>6559115.700000000186264514923095703125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367115.2700000000186264514923095703125</gml:X>
+                    <gml:Y>6559045.299999999813735485076904296875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367151.65999999991618096828460693359375</gml:X>
+                    <gml:Y>6559003.16999999992549419403076171875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367247.61000000010244548320770263671875</gml:X>
+                    <gml:Y>6559021.25</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367488.03000000002793967723846435546875</gml:X>
+                    <gml:Y>6559067.41999999992549419403076171875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367491.91999999992549419403076171875</gml:X>
+                    <gml:Y>6559129.040000000037252902984619140625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367504.82000000006519258022308349609375</gml:X>
+                    <gml:Y>6559331.25</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367651.9799999999813735485076904296875</gml:X>
+                    <gml:Y>6559252.969999999739229679107666015625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1367755.92999999993480741977691650390625</gml:X>
+                    <gml:Y>6559354.070000000298023223876953125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368006.4799999999813735485076904296875</gml:X>
+                    <gml:Y>6559226.809999999590218067169189453125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368038.09000000008381903171539306640625</gml:X>
+                    <gml:Y>6559220.1600000001490116119384765625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368074.69999999995343387126922607421875</gml:X>
+                    <gml:Y>6559240.84999999962747097015380859375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368094.5200000000186264514923095703125</gml:X>
+                    <gml:Y>6559256.299999999813735485076904296875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368167.41999999992549419403076171875</gml:X>
+                    <gml:Y>6559314.5899999998509883880615234375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368353.959999999962747097015380859375</gml:X>
+                    <gml:Y>6559464.5</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368431.19999999995343387126922607421875</gml:X>
+                    <gml:Y>6559514.190000000409781932830810546875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368521.58000000007450580596923828125</gml:X>
+                    <gml:Y>6559520.1600000001490116119384765625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368567.4399999999441206455230712890625</gml:X>
+                    <gml:Y>6559565.09999999962747097015380859375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368779.90999999991618096828460693359375</gml:X>
+                    <gml:Y>6559712.389999999664723873138427734375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1368904.0200000000186264514923095703125</gml:X>
+                    <gml:Y>6559774.709999999962747097015380859375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369109.709999999962747097015380859375</gml:X>
+                    <gml:Y>6559867.049999999813735485076904296875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369181.71999999997206032276153564453125</gml:X>
+                    <gml:Y>6560137.049999999813735485076904296875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369229.6899999999441206455230712890625</gml:X>
+                    <gml:Y>6560142.309999999590218067169189453125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369279.7700000000186264514923095703125</gml:X>
+                    <gml:Y>6560147.75999999977648258209228515625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369359.129999999888241291046142578125</gml:X>
+                    <gml:Y>6560417.610000000335276126861572265625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369410.98999999999068677425384521484375</gml:X>
+                    <gml:Y>6560548.929999999701976776123046875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369496.8100000000558793544769287109375</gml:X>
+                    <gml:Y>6560720.459999999962747097015380859375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369548.44999999995343387126922607421875</gml:X>
+                    <gml:Y>6560859.690000000409781932830810546875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369555.23999999999068677425384521484375</gml:X>
+                    <gml:Y>6560903.24000000022351741790771484375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369542.21999999997206032276153564453125</gml:X>
+                    <gml:Y>6561100.24000000022351741790771484375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369550.88999999989755451679229736328125</gml:X>
+                    <gml:Y>6561380.290000000037252902984619140625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369567.36000000010244548320770263671875</gml:X>
+                    <gml:Y>6561506.879999999888241291046142578125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369603.9799999999813735485076904296875</gml:X>
+                    <gml:Y>6561613.99000000022351741790771484375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369653.959999999962747097015380859375</gml:X>
+                    <gml:Y>6561692.309999999590218067169189453125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369660.53000000002793967723846435546875</gml:X>
+                    <gml:Y>6561702.49000000022351741790771484375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1369699.25</gml:X>
+                    <gml:Y>6561726.549999999813735485076904296875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370031.83000000007450580596923828125</gml:X>
+                    <gml:Y>6561790.809999999590218067169189453125</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370207.23999999999068677425384521484375</gml:X>
+                    <gml:Y>6561839.09999999962747097015380859375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370296.7299999999813735485076904296875</gml:X>
+                    <gml:Y>6561873.34999999962747097015380859375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370405.13999999989755451679229736328125</gml:X>
+                    <gml:Y>6561946.929999999701976776123046875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370488.3999999999068677425384521484375</gml:X>
+                    <gml:Y>6561917.429999999701976776123046875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370575.09000000008381903171539306640625</gml:X>
+                    <gml:Y>6561908.120000000111758708953857421875</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370716.129999999888241291046142578125</gml:X>
+                    <gml:Y>6561928.139999999664723873138427734375</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370774.66999999992549419403076171875</gml:X>
+                    <gml:Y>6561941.6600000001490116119384765625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370842.66999999992549419403076171875</gml:X>
+                    <gml:Y>6561900.040000000037252902984619140625</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1370933.05000000004656612873077392578125</gml:X>
+                    <gml:Y>6561910.75</gml:Y>
+                  </gml:coord>
+                  <gml:coord xmlns:gml="http://www.opengis.net/gml">
+                    <gml:X>1371226.66999999992549419403076171875</gml:X>
+                    <gml:Y>6561945.700000000186264514923095703125</gml:Y>
+                  </gml:coord>
+                </wps:Value>
+              </wps:AttributeGEOMETRY>
+            </wps:Feature>
+            <wps:Feature>
+              <wps:AttributeGEOMETRY>
+                <wps:Value srsName="0" wpstype="AttributeTypeGeometryMultiLineString">
+                  <gml:lineStringMember xmlns:gml="http://www.opengis.net/gml">
+                    <gml:LineString srsName="0">
+                      <gml:coord>
+                        <gml:X>1370980.716125383041799068450927734375</gml:X>
+                        <gml:Y>6559066.8175633884966373443603515625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371151.0361253828741610050201416015625</gml:X>
+                        <gml:Y>6559033.707563388161361217498779296875</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371353.52612538286484777927398681640625</gml:X>
+                        <gml:Y>6559070.787563388235867023468017578125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371457.4861253830604255199432373046875</gml:X>
+                        <gml:Y>6559124.59756338782608509063720703125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371516.5361253828741610050201416015625</gml:X>
+                        <gml:Y>6559155.147563387639820575714111328125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371607.25612538284622132778167724609375</gml:X>
+                        <gml:Y>6559236.91756338812410831451416015625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371695.93612538301385939121246337890625</gml:X>
+                        <gml:Y>6559292.98756338842213153839111328125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371837.42612538300454616546630859375</gml:X>
+                        <gml:Y>6559354.707563388161361217498779296875</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372127.02612538286484777927398681640625</gml:X>
+                        <gml:Y>6559647.3175633884966373443603515625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372205.00612538284622132778167724609375</gml:X>
+                        <gml:Y>6559828.07756338827311992645263671875</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372185.92612538300454616546630859375</gml:X>
+                        <gml:Y>6559939.367563388310372829437255859375</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372132.5761253829114139080047607421875</gml:X>
+                        <gml:Y>6560031.897563387639820575714111328125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371886.2361253830604255199432373046875</gml:X>
+                        <gml:Y>6560176.707563388161361217498779296875</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371893.8261253829114139080047607421875</gml:X>
+                        <gml:Y>6560212.207563388161361217498779296875</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371902.4461253830231726169586181640625</gml:X>
+                        <gml:Y>6560229.287563388235867023468017578125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371940.77612538286484777927398681640625</gml:X>
+                        <gml:Y>6560269.537563388235867023468017578125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371922.2461253828369081020355224609375</gml:X>
+                        <gml:Y>6560421.5675633884966373443603515625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372041.716125383041799068450927734375</gml:X>
+                        <gml:Y>6560444.73756338842213153839111328125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372156.556125382892787456512451171875</gml:X>
+                        <gml:Y>6560514.697563388384878635406494140625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372254.45612538303248584270477294921875</gml:X>
+                        <gml:Y>6560667.4275633879005908966064453125</gml:Y>
+                      </gml:coord>
+                    </gml:LineString>
+                  </gml:lineStringMember>
+                  <gml:lineStringMember xmlns:gml="http://www.opengis.net/gml">
+                    <gml:LineString srsName="0">
+                      <gml:coord>
+                        <gml:X>1372271.386125382967293262481689453125</gml:X>
+                        <gml:Y>6560717.837563388049602508544921875</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372283.14612538297660648822784423828125</gml:X>
+                        <gml:Y>6560837.127563388086855411529541015625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372263.10612538293935358524322509765625</gml:X>
+                        <gml:Y>6560976.467563387937843799591064453125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372241.06612538290210068225860595703125</gml:X>
+                        <gml:Y>6560975.947563388384878635406494140625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372192.8661253829486668109893798828125</gml:X>
+                        <gml:Y>6560942.51756338775157928466796875</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1372091.35612538293935358524322509765625</gml:X>
+                        <gml:Y>6560849.41756338812410831451416015625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371990.8661253829486668109893798828125</gml:X>
+                        <gml:Y>6560807.23756338842213153839111328125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371984.95612538303248584270477294921875</gml:X>
+                        <gml:Y>6560792.9275633879005908966064453125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371951.1161253829486668109893798828125</gml:X>
+                        <gml:Y>6560739.557563387788832187652587890625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371928.3261253829114139080047607421875</gml:X>
+                        <gml:Y>6560707.977563387714326381683349609375</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371900.12612538295798003673553466796875</gml:X>
+                        <gml:Y>6560687.397563387639820575714111328125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371682.7361253830604255199432373046875</gml:X>
+                        <gml:Y>6560644.657563388347625732421875</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371646.33612538292072713375091552734375</gml:X>
+                        <gml:Y>6560616.377563388086855411529541015625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371585.85612538293935358524322509765625</gml:X>
+                        <gml:Y>6560523.807563387788832187652587890625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371550.47612538305111229419708251953125</gml:X>
+                        <gml:Y>6560508.3575633876025676727294921875</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>1371542.216125383041799068450927734375</gml:X>
+                        <gml:Y>6560530.397563387639820575714111328125</gml:Y>
+                      </gml:coord>
+                    </gml:LineString>
+                  </gml:lineStringMember>
+                </wps:Value>
+              </wps:AttributeGEOMETRY>
+            </wps:Feature>
+          </wps:FeatureCollection>
+        </ns:ComplexData>
+      </ns:Data>
+    </ns:Input>
+    <ns:Input>
+      <ns1:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">segmentation</ns1:Identifier>
+      <ns1:Title xmlns:ns1="http://www.opengis.net/ows/1.1">segmentation</ns1:Title>
+      <ns1:Abstract xmlns:ns1="http://www.opengis.net/ows/1.1">segmentation</ns1:Abstract>
+      <ns:Data>
+        <ns:LiteralData>false</ns:LiteralData>
+      </ns:Data>
+    </ns:Input>
+  </ns:DataInputs>
+  <ns:ResponseForm>
+    <ns:ResponseDocument lineage="false" storeExecuteResponse="true" status="false">
+      <ns:Output asReference="true" mimeType="text/xml" encoding="UTF-8">
+        <ns1:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">result</ns1:Identifier>
+        <ns1:Title xmlns:ns1="http://www.opengis.net/ows/1.1">result</ns1:Title>
+        <ns1:Abstract xmlns:ns1="http://www.opengis.net/ows/1.1">smoothed lines</ns1:Abstract>
+      </ns:Output>
+    </ns:ResponseDocument>
+  </ns:ResponseForm>
+</ns:Execute>

@@ -1,0 +1,74 @@
+<ProcessDescription storeSupported="true" statusSupported="false" wps:processVersion="1.0">
+    <ows:Identifier>ch.unizh.geo.webgen.service.LineSmoothing</ows:Identifier>
+    <ows:Title>LineSmoothing</ows:Title>
+    <ows:Abstract>Line Smoothing</ows:Abstract>
+    <ows:Metadata xlink:title="ica.wps.classification:ica.genops.cartogen.Enhancement"/>
+    <DataInputs>
+      <Input minOccurs="1" maxOccurs="1">
+        <ows:Identifier>geom</ows:Identifier>
+        <ows:Title>geom</ows:Title>
+        <ows:Abstract>layer with geometries</ows:Abstract>
+        <ComplexData maximumMegabytes="50">
+          <Default>
+            <Format>
+              <MimeType>text/xml</MimeType>
+              <Encoding>UTF-8</Encoding>
+              <Schema>http://kartographie.geo.tu-dresden.de/webgen_wps/schema/wps_featurecollection_GeometryLineString.xsd</Schema>
+            </Format>
+          </Default>
+          <Supported>
+            <Format>
+              <MimeType>text/xml</MimeType>
+              <Encoding>UTF-8</Encoding>
+              <Schema>http://kartographie.geo.tu-dresden.de/webgen_wps/schema/wps_featurecollection_GeometryLineString.xsd</Schema>
+            </Format>
+          </Supported>
+        </ComplexData>
+      </Input>
+      <Input minOccurs="1" maxOccurs="1">
+        <ows:Identifier>tolerance</ows:Identifier>
+        <ows:Title>tolerance</ows:Title>
+        <ows:Abstract>tolerance</ows:Abstract>
+        <LiteralData>
+          <ows:DataType>Double</ows:DataType>
+          <ows:AnyValue/>
+          <DefaultValue>10.0</DefaultValue>
+        </LiteralData>
+      </Input>
+      <Input minOccurs="1" maxOccurs="1">
+        <ows:Identifier>segmentation</ows:Identifier>
+        <ows:Title>segmentation</ows:Title>
+        <ows:Abstract>segmentation</ows:Abstract>
+        <LiteralData>
+          <ows:DataType>Boolean</ows:DataType>
+          <ows:AnyValue/>
+          <DefaultValue>false</DefaultValue>
+        </LiteralData>
+      </Input>
+    </DataInputs>
+    <ProcessOutputs>
+      <Output>
+        <ows:Identifier>result</ows:Identifier>
+        <ows:Title>result</ows:Title>
+        <ows:Abstract>smoothed lines</ows:Abstract>
+        <ComplexOutput>
+          <Default>
+            <Format>
+              <MimeType>text/xml</MimeType>
+              <Encoding>UTF-8</Encoding>
+              <Schema>http://kartographie.geo.tu-dresden.de/webgen_wps/schema/wps_featurecollection_GeometryLineString.xsd</Schema>
+            </Format>
+          </Default>
+          <Supported>
+            <Format>
+              <MimeType>text/xml</MimeType>
+              <Encoding>UTF-8</Encoding>
+              <Schema>http://kartographie.geo.tu-dresden.de/webgen_wps/schema/wps_featurecollection_GeometryLineString.xsd</Schema>
+            </Format>
+          </Supported>
+        </ComplexOutput>
+      </Output>
+    </ProcessOutputs>
+  </ProcessDescription>
+</wps:ProcessDescriptions>
+

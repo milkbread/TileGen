@@ -1,0 +1,79 @@
+<ns:Execute service="WPS" version="1.0.0" xmlns:ns="http://www.opengis.net/wps/1.0.0">
+  <ns1:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">ch.unizh.geo.webgen.service.BuildingSimplification</ns1:Identifier>
+  <ns:DataInputs>
+    <ns:Input>
+      <ns1:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">minlength</ns1:Identifier>
+      <ns1:Title xmlns:ns1="http://www.opengis.net/ows/1.1">minlength</ns1:Title>
+      <ns1:Abstract xmlns:ns1="http://www.opengis.net/ows/1.1">minimum length</ns1:Abstract>
+      <ns:Data>
+        <ns:LiteralData>10.0</ns:LiteralData>
+      </ns:Data>
+    </ns:Input>
+    <ns:Input>
+      <ns1:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">geom</ns1:Identifier>
+      <ns1:Title xmlns:ns1="http://www.opengis.net/ows/1.1">geom</ns1:Title>
+      <ns1:Abstract xmlns:ns1="http://www.opengis.net/ows/1.1">layer with geometries</ns1:Abstract>
+      <ns:Data>
+        <ns:ComplexData>
+          <wps:FeatureCollection xmlns:wps="www.icaci.org/genmr/wps">
+            <wps:Feature>
+              <wps:AttributeGEOMETRY>
+                <wps:Value srsName="0" wpstype="AttributeTypeGeometryPolygon">
+                  <gml:outerBoundaryIs xmlns:gml="http://www.opengis.net/gml">
+                    <gml:LinearRing>
+                      <gml:coord>
+                        <gml:X>783945.0299329287372529506683349609375</gml:X>
+                        <gml:Y>151840.2400824803044088184833526611328125</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>783953.33996594883501529693603515625</gml:X>
+                        <gml:Y>151839.4899533681455068290233612060546875</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>783952.999935419647954404354095458984375</gml:X>
+                        <gml:Y>151834.45994532821350730955600738525390625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>783963.60999526944942772388458251953125</gml:X>
+                        <gml:Y>151833.18993798433803021907806396484375</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>783961.320087259518913924694061279296875</gml:X>
+                        <gml:Y>151810.46001400394015945494174957275390625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>783956.3500284538604319095611572265625</gml:X>
+                        <gml:Y>151810.91994300144142471253871917724609375</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>783955.95997658907435834407806396484375</gml:X>
+                        <gml:Y>151807.0499717356287874281406402587890625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>783941.94999329070560634136199951171875</gml:X>
+                        <gml:Y>151808.45992426635348238050937652587890625</gml:Y>
+                      </gml:coord>
+                      <gml:coord>
+                        <gml:X>783945.0299329287372529506683349609375</gml:X>
+                        <gml:Y>151840.2400824803044088184833526611328125</gml:Y>
+                      </gml:coord>
+                    </gml:LinearRing>
+                  </gml:outerBoundaryIs>
+                </wps:Value>
+              </wps:AttributeGEOMETRY>
+            </wps:Feature>
+          </wps:FeatureCollection>
+        </ns:ComplexData>
+      </ns:Data>
+    </ns:Input>
+  </ns:DataInputs>
+  <ns:ResponseForm>
+    <ns:ResponseDocument lineage="false" storeExecuteResponse="true" status="false">
+      <ns:Output asReference="true" mimeType="text/xml" encoding="UTF-8">
+        <ns1:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">result</ns1:Identifier>
+        <ns1:Title xmlns:ns1="http://www.opengis.net/ows/1.1">result</ns1:Title>
+        <ns1:Abstract xmlns:ns1="http://www.opengis.net/ows/1.1">simplified building polygons</ns1:Abstract>
+      </ns:Output>
+    </ns:ResponseDocument>
+  </ns:ResponseForm>
+</ns:Execute>

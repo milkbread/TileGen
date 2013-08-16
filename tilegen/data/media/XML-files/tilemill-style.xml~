@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#b8dee6">
+
+<Parameters>
+  <Parameter name="bounds">2.1533,45.7982,19.3359,56.897</Parameter>
+  <Parameter name="center">12.3047,50.4715,6</Parameter>
+  <Parameter name="format">png</Parameter>
+  <Parameter name="minzoom">2</Parameter>
+  <Parameter name="maxzoom">16</Parameter>
+  <Parameter name="name"><![CDATA[Vogtland als slippy map]]></Parameter>
+  <Parameter name="description"><![CDATA[Vogtland als frei skalierbare Karte]]></Parameter>
+</Parameters>
+
+<FontSet name="fontset-0">
+  <Font face-name="Futura Medium"/>
+  <Font face-name="Function Pro Medium"/>
+  <Font face-name="Ubuntu Regular"/>
+  <Font face-name="Trebuchet MS Regular"/>
+  <Font face-name="DejaVu Sans Book"/>
+</FontSet>
+<Style name="countries" filter-mode="first">
+</Style>
+<Style name="countries-big-scale" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <PolygonSymbolizer fill="#ff00ff" />
+  </Rule>
+</Style>
+<Style name="countries-small-scale/germany" filter-mode="first">
+  <Rule>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([SOVEREIGNT] = 'Germany')</Filter>
+    <PolygonSymbolizer fill="#ff00ff" />
+  </Rule>
+</Style>
+<Style name="countries-small-scale" filter-mode="first">
+  <Rule>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <PolygonSymbolizer fill="#000000" />
+  </Rule>
+</Style>
+<Style name="countries-small-scale/outline" filter-mode="first">
+  <Rule>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <LineSymbolizer stroke="#85c5d3" stroke-width="2" stroke-linejoin="round" />
+  </Rule>
+</Style>
+<Layer name="countries"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>countries-small-scale/outline</StyleName>
+    <StyleName>countries-small-scale</StyleName>
+    <StyleName>countries-small-scale/germany</StyleName>
+    <StyleName>countries-big-scale</StyleName>
+    <StyleName>countries</StyleName>
+    <Datasource>
+       <Parameter name="file"><![CDATA[/home/klammer/Ubuntu One/Projekte/TileMill/project/slippy_vogtland/layers/countries/82945364-10m-admin-0-countries.shp]]></Parameter>
+       <Parameter name="type"><![CDATA[shape]]></Parameter>
+       <Parameter name="id"><![CDATA[countries]]></Parameter>
+       <Parameter name="project"><![CDATA[slippy_vogtland]]></Parameter>
+       <Parameter name="srs"><![CDATA[null]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="vgtl_boarder" filter-mode="first">
+</Style>
+<Style name="vgtl_boarder-outline" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <PolygonSymbolizer fill="#88b904" fill-opacity="0.5" />
+    <LineSymbolizer stroke="#88b904" stroke-width="2" />
+  </Rule>
+</Style>
+<Style name="vgtl_boarder-fill" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <PolygonSymbolizer fill="#88b904" />
+  </Rule>
+</Style>
+<Layer name="vgtl_boarder"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>vgtl_boarder-fill</StyleName>
+    <StyleName>vgtl_boarder-outline</StyleName>
+    <StyleName>vgtl_boarder</StyleName>
+    <Datasource>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="table"><![CDATA[vgtlboarder]]></Parameter>
+       <Parameter name="extent"><![CDATA[]]></Parameter>
+       <Parameter name="key_field"><![CDATA[]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[]]></Parameter>
+       <Parameter name="dbname"><![CDATA[meingis]]></Parameter>
+       <Parameter name="host"><![CDATA[localhost]]></Parameter>
+       <Parameter name="port"><![CDATA[5432]]></Parameter>
+       <Parameter name="user"><![CDATA[gisadmin]]></Parameter>
+       <Parameter name="password"><![CDATA[tinitus]]></Parameter>
+       <Parameter name="id"><![CDATA[vgtl_boarder]]></Parameter>
+       <Parameter name="project"><![CDATA[slippy_vogtland]]></Parameter>
+       <Parameter name="srs"><![CDATA[null]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="vgtl_polygons-house-numbers" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <Filter>([addr_housenumber] != '')</Filter>
+    <TextSymbolizer allow-overlap="false" size="10" character-spacing="1" face-name="Liberation Sans Regular" fill="#ffffff" ><![CDATA[[addr_housenumber]]]></TextSymbolizer>
+  </Rule>
+</Style>
+<Style name="vgtl_polygons-buildings" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([building] != 'yes') and ([addr_housenumber] != '')</Filter>
+    <PolygonSymbolizer fill="#df2424" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([building] = 'yes')</Filter>
+    <PolygonSymbolizer fill="#df2424" />
+  </Rule>
+</Style>
+<Style name="vgtl_polygons" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([nature] = 'water') and ([landuse] = 'commercial')</Filter>
+    <PolygonSymbolizer fill="#09a0be" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([nature] = 'water')</Filter>
+    <PolygonSymbolizer fill="#09a0be" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([landuse] = 'commercial')</Filter>
+    <PolygonSymbolizer fill="#df2424" />
+  </Rule>
+</Style>
+<Style name="vgtl_polygons-meadow" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([landuse] = 'meadow')</Filter>
+    <PolygonSymbolizer fill="#5ebd09" />
+  </Rule>
+</Style>
+<Style name="vgtl_polygons-farmland" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([landuse] = 'farmland')</Filter>
+    <PolygonSymbolizer fill="#884111" />
+  </Rule>
+</Style>
+<Style name="vgtl_polygons-polygon-smallscale" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([landuse] = 'industrial')</Filter>
+    <PolygonSymbolizer fill="#df2424" fill-opacity="0.3" />
+    <LineSymbolizer stroke="#df2424" stroke-width="2" stroke-dasharray="5, 5" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([landuse] = 'industrial')</Filter>
+    <PolygonSymbolizer fill="#df2424" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([landuse] = 'industrial')</Filter>
+    <PolygonSymbolizer fill="#df2424" fill-opacity="0.3" />
+    <LineSymbolizer stroke="#df2424" stroke-width="2" stroke-dasharray="5, 5" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([landuse] = 'residential')</Filter>
+    <PolygonSymbolizer fill="#df2424" fill-opacity="0.3" />
+    <LineSymbolizer stroke="#df2424" stroke-width="2" stroke-dasharray="5, 5" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([landuse] = 'residential')</Filter>
+    <PolygonSymbolizer fill="#df2424" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([landuse] = 'residential')</Filter>
+    <PolygonSymbolizer fill="#df2424" fill-opacity="0.3" />
+    <LineSymbolizer stroke="#df2424" stroke-width="2" stroke-dasharray="5, 5" />
+  </Rule>
+</Style>
+<Style name="vgtl_polygons-forest" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([landuse] = 'forest')</Filter>
+    <PolygonSymbolizer fill="#5ebd09" />
+  </Rule>
+</Style>
+<Layer name="vgtl_polygons"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>vgtl_polygons-forest</StyleName>
+    <StyleName>vgtl_polygons-polygon-smallscale</StyleName>
+    <StyleName>vgtl_polygons-farmland</StyleName>
+    <StyleName>vgtl_polygons-meadow</StyleName>
+    <StyleName>vgtl_polygons</StyleName>
+    <StyleName>vgtl_polygons-buildings</StyleName>
+    <StyleName>vgtl_polygons-house-numbers</StyleName>
+    <Datasource>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="table"><![CDATA[vgtl_polygons]]></Parameter>
+       <Parameter name="extent"><![CDATA[]]></Parameter>
+       <Parameter name="key_field"><![CDATA[osm_id]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
+       <Parameter name="dbname"><![CDATA[meingis]]></Parameter>
+       <Parameter name="host"><![CDATA[localhost]]></Parameter>
+       <Parameter name="port"><![CDATA[5432]]></Parameter>
+       <Parameter name="user"><![CDATA[gisadmin]]></Parameter>
+       <Parameter name="password"><![CDATA[tinitus]]></Parameter>
+       <Parameter name="id"><![CDATA[vgtl_polygons]]></Parameter>
+       <Parameter name="project"><![CDATA[slippy_vogtland]]></Parameter>
+       <Parameter name="srs"><![CDATA[null]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="vgtl_lines-primary" filter-mode="first">
+</Style>
+<Style name="vgtl_lines-railway" filter-mode="first">
+</Style>
+<Style name="vgtl_lines-motorway-link" filter-mode="first">
+</Style>
+<Style name="vgtl_lines-secondary" filter-mode="first">
+</Style>
+<Style name="vgtl_lines-living-street" filter-mode="first">
+</Style>
+<Style name="vgtl_lines-motorway" filter-mode="first">
+</Style>
+<Style name="vgtl_lines" filter-mode="first">
+</Style>
+<Style name="vgtl_lines-footway" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([highway] = 'footway')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="2" stroke-dasharray="2, 4" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-living-street/inner" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([highway] = 'living_street')</Filter>
+    <LineSymbolizer stroke="#000000" stroke-width="2" stroke-dasharray="1, 2" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-living-street/outer" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([highway] = 'living_street')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="3" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-track" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([highway] = 'track')</Filter>
+    <LineSymbolizer stroke="#3f3f3f" stroke-width="1" stroke-dasharray="4, 3" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-path" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([highway] = 'path')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="1" stroke-dasharray="3, 1.5" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-residential" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([highway] = 'residential')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([highway] = 'residential')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="2" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-motorway-link/inner" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <Filter>([highway] = 'motorway_link')</Filter>
+    <LineSymbolizer stroke="#000000" stroke-width="1" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([highway] = 'motorway_link')</Filter>
+    <LineSymbolizer stroke="#000000" stroke-width="1" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-motorway-link/middle" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <Filter>([highway] = 'motorway_link')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="3" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([highway] = 'motorway_link')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="2" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-motorway-link/outer" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <Filter>([highway] = 'motorway_link')</Filter>
+    <LineSymbolizer stroke="#ff0000" stroke-width="5" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([highway] = 'motorway_link')</Filter>
+    <LineSymbolizer stroke="#ff0000" stroke-width="3" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-railway/inner" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <Filter>([railway] = 'rail')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-boundaries2" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([boundary] != '')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="10, 5" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-railway/outer" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <Filter>([railway] = 'rail')</Filter>
+    <LineSymbolizer stroke="#000000" stroke-width="4" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-boundaries1" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([boundary] != '')</Filter>
+    <LineSymbolizer stroke="#606060" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="5, 3" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-primary/inner" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <Filter>([highway] = 'primary')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="3" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-primary/outer" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <Filter>([highway] = 'primary')</Filter>
+    <LineSymbolizer stroke="#000000" stroke-width="4" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-motorway/inner" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <Filter>([highway] = 'motorway')</Filter>
+    <LineSymbolizer stroke="#000000" stroke-width="1" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-waterway" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <Filter>([waterway] != '')</Filter>
+    <LineSymbolizer stroke="#09a0be" stroke-width="2" stroke-linejoin="round" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-motorway/middle" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <Filter>([highway] = 'motorway')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="3" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-motorway/outer" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <Filter>([highway] = 'motorway')</Filter>
+    <LineSymbolizer stroke="#ff0000" stroke-width="5" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-secondary/inner" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <Filter>([highway] = 'secondary')</Filter>
+    <LineSymbolizer stroke="#ffffff" stroke-width="1.5" />
+  </Rule>
+</Style>
+<Style name="vgtl_lines-secondary/outer" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <Filter>([highway] = 'secondary')</Filter>
+    <LineSymbolizer stroke="#000000" stroke-width="2.5" />
+  </Rule>
+</Style>
+<Layer name="vgtl_lines"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>vgtl_lines-secondary/outer</StyleName>
+    <StyleName>vgtl_lines-secondary/inner</StyleName>
+    <StyleName>vgtl_lines-motorway/outer</StyleName>
+    <StyleName>vgtl_lines-motorway/middle</StyleName>
+    <StyleName>vgtl_lines-waterway</StyleName>
+    <StyleName>vgtl_lines-motorway/inner</StyleName>
+    <StyleName>vgtl_lines-primary/outer</StyleName>
+    <StyleName>vgtl_lines-primary/inner</StyleName>
+    <StyleName>vgtl_lines-boundaries1</StyleName>
+    <StyleName>vgtl_lines-railway/outer</StyleName>
+    <StyleName>vgtl_lines-boundaries2</StyleName>
+    <StyleName>vgtl_lines-railway/inner</StyleName>
+    <StyleName>vgtl_lines-motorway-link/outer</StyleName>
+    <StyleName>vgtl_lines-motorway-link/middle</StyleName>
+    <StyleName>vgtl_lines-motorway-link/inner</StyleName>
+    <StyleName>vgtl_lines-residential</StyleName>
+    <StyleName>vgtl_lines-path</StyleName>
+    <StyleName>vgtl_lines-track</StyleName>
+    <StyleName>vgtl_lines-living-street/outer</StyleName>
+    <StyleName>vgtl_lines-living-street/inner</StyleName>
+    <StyleName>vgtl_lines-footway</StyleName>
+    <StyleName>vgtl_lines</StyleName>
+    <StyleName>vgtl_lines-motorway</StyleName>
+    <StyleName>vgtl_lines-living-street</StyleName>
+    <StyleName>vgtl_lines-secondary</StyleName>
+    <StyleName>vgtl_lines-motorway-link</StyleName>
+    <StyleName>vgtl_lines-railway</StyleName>
+    <StyleName>vgtl_lines-primary</StyleName>
+    <Datasource>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="table"><![CDATA[vgtl_lines]]></Parameter>
+       <Parameter name="extent"><![CDATA[]]></Parameter>
+       <Parameter name="key_field"><![CDATA[osm_id]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
+       <Parameter name="dbname"><![CDATA[meingis]]></Parameter>
+       <Parameter name="host"><![CDATA[localhost]]></Parameter>
+       <Parameter name="port"><![CDATA[5432]]></Parameter>
+       <Parameter name="user"><![CDATA[gisadmin]]></Parameter>
+       <Parameter name="password"><![CDATA[tinitus]]></Parameter>
+       <Parameter name="id"><![CDATA[vgtl_lines]]></Parameter>
+       <Parameter name="project"><![CDATA[slippy_vogtland]]></Parameter>
+       <Parameter name="srs"><![CDATA[null]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="country-name" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
+    <Filter>([ScaleRank] &lt; 2)</Filter>
+    <TextSymbolizer size="14" character-spacing="2" line-spacing="2" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 2)</Filter>
+    <TextSymbolizer size="12" character-spacing="1" line-spacing="1" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 2)</Filter>
+    <TextSymbolizer size="11" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>50000000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 2)</Filter>
+    <TextSymbolizer size="10" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA[[ABBREV]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 2)</Filter>
+    <TextSymbolizer fontset-name="fontset-0" fill="#143d52" size="9" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA[[ABBREV]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>200000000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 2)</Filter>
+    <TextSymbolizer fontset-name="fontset-0" fill="#143d52" size="9" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA['']]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
+    <Filter>([ScaleRank] &lt; 3)</Filter>
+    <TextSymbolizer size="14" character-spacing="2" line-spacing="2" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 3)</Filter>
+    <TextSymbolizer size="12" character-spacing="1" line-spacing="1" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 3)</Filter>
+    <TextSymbolizer size="11" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>50000000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 3)</Filter>
+    <TextSymbolizer size="10" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA[[ABBREV]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 3)</Filter>
+    <TextSymbolizer fontset-name="fontset-0" fill="#143d52" size="9" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA['']]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
+    <Filter>([ScaleRank] &lt; 4)</Filter>
+    <TextSymbolizer size="14" character-spacing="2" line-spacing="2" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 4)</Filter>
+    <TextSymbolizer size="12" character-spacing="1" line-spacing="1" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 4)</Filter>
+    <TextSymbolizer size="11" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 4)</Filter>
+    <TextSymbolizer fontset-name="fontset-0" fill="#143d52" size="9" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA['']]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
+    <Filter>([ScaleRank] &lt; 5)</Filter>
+    <TextSymbolizer size="14" character-spacing="2" line-spacing="2" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 5)</Filter>
+    <TextSymbolizer size="12" character-spacing="1" line-spacing="1" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 5)</Filter>
+    <TextSymbolizer fontset-name="fontset-0" fill="#143d52" size="9" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA['']]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
+    <Filter>([ScaleRank] &lt; 9)</Filter>
+    <TextSymbolizer size="14" character-spacing="2" line-spacing="2" fontset-name="fontset-0" fill="#143d52" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" wrap-width="20" ><![CDATA[[NAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([ScaleRank] &lt; 9)</Filter>
+    <TextSymbolizer fontset-name="fontset-0" fill="#143d52" size="9" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA['']]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <TextSymbolizer fontset-name="fontset-0" fill="#143d52" size="9" text-transform="uppercase" halo-fill="rgba(255, 255, 255, 0.5)" halo-radius="1" line-spacing="1" wrap-width="20" ><![CDATA['']]></TextSymbolizer>
+  </Rule>
+</Style>
+<Layer name="country-name"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>country-name</StyleName>
+    <Datasource>
+       <Parameter name="file"><![CDATA[/home/klammer/Ubuntu One/Projekte/TileMill/project/slippy_vogtland/layers/country-name/3e1431a6-10m-admin-0-country-points.shp]]></Parameter>
+       <Parameter name="id"><![CDATA[country-name]]></Parameter>
+       <Parameter name="project"><![CDATA[slippy_vogtland]]></Parameter>
+       <Parameter name="srs"><![CDATA[null]]></Parameter>
+       <Parameter name="type"><![CDATA[shape]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="vgtl_points" filter-mode="first">
+</Style>
+<Style name="vgtl_points-towns" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([place] = 'town')</Filter>
+    <TextSymbolizer allow-overlap="true" size="10" character-spacing="1" face-name="Liberation Sans Bold" fill="#000000" halo-fill="#ffffff" halo-radius="1.5" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+</Style>
+<Layer name="vgtl_points"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>vgtl_points-towns</StyleName>
+    <StyleName>vgtl_points</StyleName>
+    <Datasource>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="table"><![CDATA[vgtl_points]]></Parameter>
+       <Parameter name="extent"><![CDATA[]]></Parameter>
+       <Parameter name="key_field"><![CDATA[osm_id]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
+       <Parameter name="dbname"><![CDATA[meingis]]></Parameter>
+       <Parameter name="host"><![CDATA[localhost]]></Parameter>
+       <Parameter name="port"><![CDATA[5432]]></Parameter>
+       <Parameter name="user"><![CDATA[gisadmin]]></Parameter>
+       <Parameter name="password"><![CDATA[tinitus]]></Parameter>
+       <Parameter name="id"><![CDATA[vgtl_points]]></Parameter>
+       <Parameter name="project"><![CDATA[slippy_vogtland]]></Parameter>
+       <Parameter name="srs"><![CDATA[null]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="hillshading" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <RasterSymbolizer opacity="0.7" scaling="bilinear" mode="multiply" />
+  </Rule>
+</Style>
+<Layer name="hillshading"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>hillshading</StyleName>
+    <Datasource>
+       <Parameter name="file"><![CDATA[/home/klammer/Ubuntu One/Projekte/TileMill/project/slippy_vogtland/layers/hillshading.tif]]></Parameter>
+       <Parameter name="type"><![CDATA[gdal]]></Parameter>
+    </Datasource>
+  </Layer>
+
+</Map>

@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=Tilegen
+_Comment=Tilegen application
+Categories=GNOME;Utility;
+Exec=tilegen
+Icon=tilegen
+Terminal=false
+Type=Application
