@@ -426,6 +426,19 @@
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
             <child>
+              <object class="GtkImage" id="image8">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">../media/tilegen_cd.png</property>
+                <property name="use_fallback">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkBox" id="box2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -469,7 +482,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">0</property>
+                <property name="position">1</property>
               </packing>
             </child>
             <child>
@@ -528,7 +541,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">1</property>
+                <property name="position">2</property>
               </packing>
             </child>
             <child>
@@ -541,7 +554,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">3</property>
               </packing>
             </child>
           </object>
@@ -737,6 +750,9 @@
                   </packing>
                 </child>
                 <child>
+                  <placeholder/>
+                </child>
+                <child>
                   <object class="GtkSeparator" id="separator8">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -749,9 +765,24 @@
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkLabel" id="label2">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Test-Area</property>
+                    <property name="justify">center</property>
+                    <property name="ellipsize">end</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkBox" id="box11">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="homogeneous">True</property>
                     <child>
                       <object class="GtkButton" id="button_mapnik">
                         <property name="label" translatable="yes">TEst Mapnik</property>
@@ -817,11 +848,8 @@
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">True</property>
-                    <property name="position">3</property>
+                    <property name="position">4</property>
                   </packing>
-                </child>
-                <child>
-                  <placeholder/>
                 </child>
               </object>
               <packing>
