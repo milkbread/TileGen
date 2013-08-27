@@ -8,5 +8,7 @@ You want to test it?
 * use [Ubuntu](http://www.ubuntu.com/)
 * install [Quickly](https://wiki.ubuntu.com/Quickly) 
 * clone the repo: *git clone https://github.com/milkbread/TileGen.git*
-* goto: */tilegen*
+* goto: */TileGen/tilegen*
 * call: *quickly run*
+
+**(Maybe you have to install some dependent libraries, like pprocess or Mapnik!)**
